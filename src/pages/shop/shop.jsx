@@ -1,5 +1,6 @@
 import React from 'react';
 import test from "../../assets/image/banner.webp"
+import Footer from '../../layouts/footer';
 const Shop = () => {
     return (
         <>
@@ -7,6 +8,8 @@ const Shop = () => {
 
             <img src={test} alt="" />
 
+            
+<Footer></Footer>
         </div>
         </>
     );

@@ -1,5 +1,4 @@
-
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import first from "../../assets/image/item-cart-01.jpg"
 import tanya from "../../assets/image/cards1.webp"
 import carossel from "../../assets/image/shopy4.webp"
@@ -8,18 +7,46 @@ import lkhamsa from "../../assets/image/cards3.webp"
 import rab3a from "../../assets/image/cards4.webp"
 import sadsa from "../../assets/image/cards2.webp"
 import sab3a from "../../assets/image/cards6.webp"
+import tamna from "../../assets/image/shop-item-09.jpg"
+import tas3a from "../../assets/image/banner-08.jpg"
 import { Carousel } from 'flowbite';
 import { Link } from 'react-router-dom';
+import Footer from '../../layouts/footer';
+
+
 
 
 const Home = () => {
+    const calculateTimeLeft = () => {
+        const difference = +new Date('2025-12-31T23:59:59') - +new Date(); // Replace with your target date
+        let timeLeft = {};
+
+        if (difference > 0) {
+            timeLeft = {
+                days: Math.floor(difference / (1000 * 60 * 60 * 24)),
+                hours: Math.floor((difference / (1000 * 60 * 60)) % 24),
+                minutes: Math.floor((difference / 1000 / 60) % 60),
+                seconds: Math.floor((difference / 1000) % 60),
+            };
+        }
+
+        return timeLeft;
+    };
+
+    const [timeLeft, setTimeLeft] = useState(calculateTimeLeft());
+
     useEffect(() => {
         const carousell = document.getElementById("default-carousel")
         const carossel = new Carousel(carousell)
+        const timer = setInterval(() => {
+            setTimeLeft(calculateTimeLeft());
+        }, 1000);
+
+        return () => clearInterval(timer);
     }, [])
     return (
 
-        <div className='w-[163.4vh] h-[55vh] top-7 absolute left-[41.2vh]'>
+        <div className='md:w-[79vw] h-[55vh] top-7 absolute left-[41.2vh] '>
             <div className=' flex flex-col gap-10'>
 
 
@@ -60,34 +87,99 @@ const Home = () => {
                     </button>
                 </div>
 
-                <div className='grid grid-cols-3'>
-                    <Link to={"/Shop"}>
-                        <img className='rounded-2xl p-3' src={tanya} alt="..." />
-                     <button>bay</button>
-                     </Link>
-                    <Link to={"/Shop"}>
-                        <img className='rounded-2xl p-3' src={talta} alt="..." />
-                     <button>bay</button>
-                     </Link>
-                    <Link to={"/Shop"}>
-                        <img className='rounded-2xl p-3' src={lkhamsa} alt="..." />
-                     <button>bay</button>
-                     </Link>
-                    <Link to={"/Shop"}>
-                        <img className='rounded-2xl p-3' src={rab3a} alt="..." />
-                     <button>bay</button>
-                     </Link>
-                    <Link to={"/Shop"}>
-                        <img className='rounded-2xl p-3' src={sadsa} alt="..." />
-                     <button>bay</button>
-                     </Link>
-                    <Link to={"/Shop"}>
-                        <img className='rounded-2xl p-3' src={sab3a} alt="..." />
-                     <button>bay</button>
-                     </Link>
-                </div>
-            </div>
 
+
+
+                <div className='grid grid-cols-3 p-2'>
+                    <Link to={"/Shop"} className=''>
+                        <img className='rounded-xl p-3' src={tanya} alt="..." />
+                        <button className='relative top-[-10vh] left-[13vh] text-center text-[3vh] px-19 py-2 bg-white/90 hover:bg-[#e65a46] hover:text-white'>dresse</button>
+                    </Link>
+                    <Link to={"/Shop"}>
+                        <img className='rounded-xl p-3' src={talta} alt="..." />
+                        <button className='relative top-[-10vh] left-[13vh] text-center text-[3vh] px-19 py-2 bg-white/90 hover:bg-[#e65a46] hover:text-white'>footerwear</button>
+                    </Link>
+                    <Link to={"/Shop"}>
+                        <img className='rounded-xl p-3' src={lkhamsa} alt="..." />
+                        <button className='relative top-[-10vh] left-[13vh] text-center text-[3vh] px-19 py-2 bg-white/90 hover:bg-[#e65a46] hover:text-white'>bags</button>
+                    </Link>
+                    <Link to={"/Shop"}>
+                        <img className='rounded-xl p-3' src={rab3a} alt="..." />
+                        <button className='relative top-[-10vh] left-[13vh] text-center text-[3vh] px-19 py-2 bg-white/90 hover:bg-[#e65a46] hover:text-white'>sunglasseq</button>
+                    </Link>
+                    <Link to={"/Shop"}>
+                        <img className='rounded-xl p-3' src={sadsa} alt="..." />
+                        <button className='relative top-[-10vh] left-[13vh] text-center text-[3vh] px-19 py-2 bg-white/90 hover:bg-[#e65a46] hover:text-white'>watches</button>
+                    </Link>
+                    <Link to={"/Shop"}>
+                        <img className='rounded-xl p-3' src={sab3a} alt="..." />
+                        <button className='relative top-[-10vh] left-[13vh] text-center text-[3vh] px-19 py-2 bg-white/90 hover:bg-[#e65a46] hover:text-white'>accessories</button>
+                    </Link>
+                </div>
+
+
+
+
+
+
+
+                <div className='w-full h-[75vh] bg-cover bg-center' style={{ backgroundImage: `url(${tas3a})` }}>
+
+
+
+                    <div className="flex justify-end items-center py-10">
+                        <div className="bg-white p-6  shadow-md flex flex-col items-center">
+
+                            <img src={ tamna} alt="Product Image" className="w-[30vw] h-[35vh] transition duration-300 ease-in-out hover:scale-105" />
+
+
+                            <h3 className="text-xl font-semibold text-gray-700">Boxy2 T-Shirt with Roll Sleeve</h3>
+                            <p className="text-gray-600 text-lg mb-6">$20.00</p>
+
+
+                            <div className="flex items-center justify-center">
+
+
+                                <div className="flex space-x-4">
+                                    <div className="flex flex-col items-center border p-3">
+                                        <span className="text-xl font-bold">{timeLeft.days || '0'}</span>
+                                        <span className="text-sm text-gray-500">days</span>
+                                    </div>
+                                    <div className="flex flex-col items-center border p-3">
+                                        <span className="text-xl font-bold">{timeLeft.hours || '0'}</span>
+                                        <span className="text-sm text-gray-500">hrs</span>
+                                    </div>
+                                    <div className="flex flex-col items-center border p-3">
+                                        <span className="text-xl font-bold">{timeLeft.minutes || '0'}</span>
+                                        <span className="text-sm text-gray-500">mins</span>
+                                    </div>
+                                    <div className="flex flex-col items-center border p-3">
+                                        <span className="text-xl font-bold">{timeLeft.seconds || '0'}</span>
+                                        <span className="text-sm text-gray-500">secs</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            </div>
+ <Footer></Footer>
 
         </div>
 
