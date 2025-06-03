@@ -12,6 +12,13 @@ import tas3a from "../../assets/image/banner-08.jpg"
 import bag from "../../assets/image/blog-01.jpg"
 import blog2 from "../../assets/image/blog-02.jpg"
 import blog3 from "../../assets/image/blog-03.jpg"
+import shopy1 from "../../assets/image/shopi2.webp"
+import shopy2 from "../../assets/image/shopy3.webp"
+import shopy3 from "../../assets/image/shopy4.webp"
+import shopy4 from "../../assets/image/shopy5.webp"
+import shopy5 from "../../assets/image/shopy6.webp"
+import shopy6 from "../../assets/image/shopy7.webp"
+import shopy7 from "../../assets/image/shopy8.webp"
 import { Carousel } from 'flowbite';
 import { Link } from 'react-router-dom';
 import Footer from '../../layouts/footer';
@@ -36,6 +43,10 @@ const Home = () => {
         return timeLeft;
     };
 
+
+
+    
+
     const [timeLeft, setTimeLeft] = useState(calculateTimeLeft());
 
     useEffect(() => {
@@ -59,8 +70,13 @@ const Home = () => {
 
                     <div className="relative h-80 overflow-hidden rounded-lg md:h-full">
 
-                        <div className="duration-300 ease-in-out absolute inset-0 transition-all h-full transform translate-x-0" data-carousel-item="active">
-                            <img src={carossel} className="absolute block h-full  w-[25vw] -translate-x-1/2 -translate-y-1/2 top-1/2 left-[130vh]" alt="carousel image 1" />
+                        <div className="duration-300 ease-in-out absolute inset-0 transition-all h-full transform translate-x-0 group" data-carousel-item="active">
+                            <img src={carossel} className="flex  h-full w-50  object-cover transition-transform duration-500 group-hover:scale-110 " alt="carousel image 1" />
+                            <div className="absolute inset-0 flex flex-col items-center justify-center text-black bg-opacity-30 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                                <h2 className="text-2xl md:text-4xl mb-2">Women Collection 2018</h2>
+                                <h1 className="text-4xl md:text-6xl font-bold mb-4">New arrivals</h1>
+                                <Link to="/Shop" className="px-6 py-3 bg-white text-black text-lg hover:bg-[#e65a46] hover:text-white transition-colors duration-300">Shop Now</Link>
+                            </div>
                         </div>
 
                         <div className="duration-300 ease-in-out absolute inset-0 transition-all transform translate-x-full" data-carousel-item>
@@ -168,7 +184,130 @@ const Home = () => {
 
                 </div>
 
+                <div className='flex flex-col items-center gap-5'>
+                    <h1>OUR PRODUCTS</h1>
+                    <div className='flex gap-9'>
 
+                        <button>Best Seller</button>
+                        <button>Featured</button>
+                        <button>Home page</button>
+                    </div>
+
+
+
+                    <div className='grid grid-cols-4 gap-5 p-5'>
+                        <div className="w-[18vw] p-3">
+                            <div className="relative group">
+                                <img src={shopy1} alt="" className="w-full transition duration-300 ease-in-out group-hover:scale-105" />
+                                <button className="absolute bottom-2 right-25 bg-black text-white text-sm px-3 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                    Add to Cart
+                                </button>
+                            </div>
+                            <h1 className="">
+                                Boxy T-Shirt with Roll Sleeve <br />
+                                <span>$20.00</span>
+                            </h1>
+
+                        </div>
+                        <div className="w-[18vw] p-3">
+                            <div className="relative group">
+                                <img src={shopy2} alt="" className="w-full transition duration-300 ease-in-out group-hover:scale-105" />
+                                <button className="absolute bottom-2 right-25 bg-black text-white text-sm px-3 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                    Add to Cart
+                                </button>
+                            </div>
+                            <h1 className="">
+                                Boxy T-Shirt with Roll Sleeve <br />
+                                <span>$20.00</span>
+                            </h1>
+
+                        </div>
+                        <div className="w-[18vw] p-3">
+                            <div className="relative group">
+                                <img src={shopy3} alt="" className="w-full transition duration-300 ease-in-out group-hover:scale-105" />
+                                <button className="absolute bottom-2 right-25 bg-black text-white text-sm px-3 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                    Add to Cart
+                                </button>
+                            </div>
+                            <h1 className="">
+                                Boxy T-Shirt with Roll Sleeve <br />
+                                <span>$20.00</span>
+                            </h1>
+
+                        </div>
+                        <div className="w-[18vw] p-3">
+                            <div className="relative group">
+                                <img src={shopy4} alt="" className="w-full transition duration-300 ease-in-out group-hover:scale-105" />
+                                <button className="absolute bottom-2 right-25 bg-black text-white text-sm px-3 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                    Add to Cart
+                                </button>
+                            </div>
+                            <h1 className="">
+                                Boxy T-Shirt with Roll Sleeve <br />
+                                <span>$20.00</span>
+                            </h1>
+
+                        </div>
+                        <div className="w-[18vw] p-3">
+                            <div className="relative group">
+                                <img src={shopy5} alt="" className="w-full transition duration-300 ease-in-out group-hover:scale-105" />
+                                <button className="absolute bottom-2 right-25 bg-black text-white text-sm px-3 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                    Add to Cart
+                                </button>
+                            </div>
+                            <h1 className="">
+                                Boxy T-Shirt with Roll Sleeve <br />
+                                <span>$20.00</span>
+                            </h1>
+
+                        </div>
+                        <div className="w-[18vw] p-3">
+                            <div className="relative group">
+                                <img src={shopy6} alt="" className="w-full transition duration-300 ease-in-out group-hover:scale-105" />
+                                <button className="absolute bottom-2 right-25 bg-black text-white text-sm px-3 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                    Add to Cart
+                                </button>
+                            </div>
+                            <h1 className="">
+                                Boxy T-Shirt with Roll Sleeve <br />
+                                <span>$20.00</span>
+                            </h1>
+
+                        </div>
+                        <div className="w-[18vw] p-3">
+                            <div className="relative group">
+                                <img src={shopy7} alt="" className="w-full transition duration-300 ease-in-out group-hover:scale-105" />
+                                <button className="absolute bottom-2 right-25 bg-black text-white text-sm px-3 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                    Add to Cart
+                                </button>
+                            </div>
+                            <h1 className="">
+                                Boxy T-Shirt with Roll Sleeve <br />
+                                <span>$20.00</span>
+                            </h1>
+
+                        </div>
+                        <div className="w-[18vw] p-3">
+                            <div className="relative group">
+                                <img src={shopy3} alt="" className="w-full transition duration-300 ease-in-out group-hover:scale-105" />
+                                <button className="absolute bottom-2 right-25 bg-black text-white text-sm px-3 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                    Add to Cart
+                                </button>
+                            </div>
+                            <h1 className="">
+                                Boxy T-Shirt with Roll Sleeve <br />
+                                <span>$20.00</span>
+                            </h1>
+
+                        </div>
+                    </div>
+                    <div>
+
+
+
+
+                    </div>
+                </div>
 
 
                 <div className='p-3'>
@@ -207,27 +346,27 @@ const Home = () => {
 
 
 
-<div className='flex flex-col gap-20 p-5'>
-<h1 className='text-center text-[5vh] '>@ FOLLOW US ON INSTAGRAM</h1>
-<div className='flex  justify-center gap-30 text-center p-5 text-gray-600'>
-    <div className='w-95  border-r-1 flex flex-col gap-4'>
-        <h1>Free Delivery Worldwide</h1>
-        <p>Mirum est notare quam littera gothica</p>
-    </div>
-    <div className='flex flex-col gap-4'>
-        <h1>30 Days Return</h1>
-        <p className='text-[2vh] '>Simply return it within 30 days for an exchange.</p>
-    </div>
-    <div className=' w-95 border-l-1 flex flex-col gap-4'>
-        <h1>Store Opening</h1>
-        <p>Shop open from Monday to Sunday</p>
-    </div>
+                <div className='flex flex-col gap-20 p-5'>
+                    <h1 className='text-center text-[5vh] '>@ FOLLOW US ON INSTAGRAM</h1>
+                    <div className='flex  justify-center gap-30 text-center p-5 text-gray-600'>
+                        <div className='w-95  border-r-1 flex flex-col gap-4'>
+                            <h1>Free Delivery Worldwide</h1>
+                            <p>Mirum est notare quam littera gothica</p>
+                        </div>
+                        <div className='flex flex-col gap-4'>
+                            <h1>30 Days Return</h1>
+                            <p className='text-[2vh] '>Simply return it within 30 days for an exchange.</p>
+                        </div>
+                        <div className=' w-95 border-l-1 flex flex-col gap-4'>
+                            <h1>Store Opening</h1>
+                            <p>Shop open from Monday to Sunday</p>
+                        </div>
 
 
-</div>
+                    </div>
 
 
-</div>
+                </div>
 
 
 

@@ -1,16 +1,168 @@
-import React from 'react';
+import photo from '../../assets/image/blog-02.jpg'
 import news from '../../assets/image/news.png'
+import blog1 from '../../assets/image/blog-01.jpg'
+import blog2 from '../../assets/image/blog-02.jpg'
+import blog3 from '../../assets/image/blog-03.jpg'
+import React from 'react';
+import { Link } from 'react-router-dom';
+import Footer from '../../layouts/footer';
+
 const Blog = () => {
+    const blogPosts = [
+        {
+            id: 1,
+            title: "Black Friday Guide: Best Sales & Discount Codes",
+            image:blog1,
+            date: "22 Dec 2023",
+            category: "Shopping Guide",
+            excerpt: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco."
+        },
+        {
+            id: 2,
+            title: "The White Sneakers Nearly Every Fashion Girl Owns",
+            image: blog2,
+            date: "18 Dec 2023",
+            category: "Fashion",
+            excerpt: "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident."
+        }
+    ];
+
+    const featuredProducts = [
+        {
+            id: 1,
+            name: "Boxy T-Shirt with Roll Sleeve",
+            price: 20.00,
+            image:photo
+        },
+        {
+            id: 2,
+            name: "Boxy1 T-Shirt with Roll Sleeve",
+            price: 35.00,
+            image:blog1
+        },
+        {
+            id: 3,
+            name: "Boxy2 T-Shirt with Roll Sleeve",
+            price: 15.00,
+            image: blog2
+        },
+        {
+            id: 4,
+            name: "Boxy3 T-Shirt with Roll Sleeve",
+            price: 25.00,
+            image: blog3
+        }
+    ];
+
+    const tags = ["Fashion", "Lifestyle", "Denim", "Streetstyle", "Crafts"];
+
     return (
-        <>
-            <div className='md:w-[79vw] h-[55vh]  absolute left-[41.7vh] '>
-<img src={news} alt="" />
-
-
-
+        <div className="min-h-screen bg-white w-[78vw] h-[55vh]  absolute left-[41.2vh] flex flex-col gap-8">
+          
+            <div className="relative h-[300px] bg-black">
+                <img 
+                    src={news} 
+                    alt="Blog Banner" 
+                    className="w-full h-full object-cover opacity-50"
+                />
+                <div className="absolute inset-0 flex items-center justify-center">
+                    <h1 className="text-5xl font-bold text-white">NEWS</h1>
+                </div>
             </div>
-        </>
+
+          
+            <div className="container mx-auto px-4 py-16">
+                <div className="flex flex-col lg:flex-row gap-12">
+                
+                    <div className="lg:w-2/3">
+                        {blogPosts.map(post => (
+                            <article key={post.id} className="mb-16">
+                                <div className="mb-6 overflow-hidden">
+                                    <img 
+                                        src={post.image} 
+                                        alt={post.title}
+                                        className="w-full h-[400px] object-cover hover:scale-105 transition-transform duration-500"
+                                    />
+                                </div>
+                                <div className="text-sm text-gray-500 mb-3">
+                                    <span>{post.date}</span>
+                                    <span className="mx-2">|</span>
+                                    <span>{post.category}</span>
+                                </div>
+                                <h2 className="text-2xl font-semibold mb-4 hover:text-red-500 transition-colors">
+                                    <Link to={`/blog`}>{post.title}</Link>
+                                </h2>
+                                <p className="text-gray-600 mb-6">{post.excerpt}</p>
+                                <Link 
+                                    to={`/blog`}
+                                    className="inline-block text-gray-800 hover:text-red-500 transition-colors"
+                                >
+                                    Continue Reading →
+                                </Link>
+                            </article>
+                        ))}
+                    </div>
+
+                  
+                    <div className="lg:w-1/3">
+                      
+                        <div className="mb-12">
+                            <div className="relative">
+                                <input
+                                    type="text"
+                                    placeholder="Search"
+                                    className="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:border-red-500"
+                                />
+                                <button className="absolute right-3 top-1/2 -translate-y-1/2">
+                                    <i className="fas fa-search text-gray-400"></i>
+                                </button>
+                            </div>
+                        </div>
+
+                        <div className="mb-12">
+                            <h3 className="text-lg font-semibold mb-6">Featured Products</h3>
+                            <div className="space-y-4">
+                                {featuredProducts.map(product => (
+                                    <div key={product.id} className="flex gap-4">
+                                        <Link to={`/shop`} className="w-20 h-20 flex-shrink-0">
+                                            <img 
+                                                src={product.image} 
+                                                alt={product.name}
+                                                className="w-full h-full object-cover"
+                                            />
+                                        </Link>
+                                        <div>
+                                            <h4 className="text-sm hover:text-red-500 transition-colors">
+                                                <Link to={`/shop`}>{product.name}</Link>
+                                            </h4>
+                                            <p className="text-gray-600">${product.price.toFixed(2)}</p>
+                                        </div>
+                                    </div>
+                                ))}
+                            </div>
+                        </div>
+
+                      
+                        <div>
+                            <h3 className="text-lg font-semibold mb-6">Tags Cloud</h3>
+                            <div className="flex flex-wrap gap-2">
+                                {tags.map(tag => (
+                                    <Link 
+                                        key={tag}
+                                        to={`/blog`}
+                                        className="px-4 py-2 bg-gray-100 text-gray-600 text-sm hover:bg-red-500 hover:text-white transition-colors rounded"
+                                    >
+                                        {tag}
+                                    </Link>
+                                ))}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <Footer></Footer>
+        </div>
     );
 };
 
-export default Blog;
+export default Blog; 
