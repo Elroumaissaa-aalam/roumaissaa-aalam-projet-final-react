@@ -21,7 +21,7 @@ import Footer from '../../layouts/footer';
 
 const Home = () => {
     const calculateTimeLeft = () => {
-        const difference = +new Date('2025-12-31T23:59:59') - +new Date(); 
+        const difference = +new Date('2025-12-31T23:59:59') - +new Date();
         let timeLeft = {};
 
         if (difference > 0) {
@@ -133,7 +133,7 @@ const Home = () => {
                     <div className="flex justify-end items-center py-10 p-4">
                         <div className="bg-white p-6  shadow-md flex flex-col items-center">
 
-                            <img src={ tamna} alt="Product Image" className="w-[35vw] h-[40vh] transition duration-300 ease-in-out bg-cover hover:scale-105" />
+                            <img src={tamna} alt="Product Image" className="w-[35vw] h-[40vh] transition duration-300 ease-in-out bg-cover hover:scale-105" />
 
 
                             <h3 className="text-xl font-semibold text-gray-700">Boxy2 T-Shirt with Roll Sleeve</h3>
@@ -171,49 +171,69 @@ const Home = () => {
 
 
 
-<div className='p-3'>
+                <div className='p-3'>
 
-<h1 className='text-center p-3 text-[5vh]'>Our Blog</h1>
+                    <h1 className='text-center p-3  text-[5vh]'>Our Blog</h1>
 
-<div className='flex'>
+                    <div className='flex'>
 
-<div className='p-2'>
-    <img className='w-[55vh]' src={bag} alt="" />
-    <div className='flex flex-col gap-5 text-gray-500'>
-        <h1 className='text-xl w-95 text-black'>Black Friday Guide: Best Sales & Discount Codes</h1>
-        <p>by fashe-theme Admin on Dec 28,2017</p>
-        <p className='w-95'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam sed turpis sed lorem dignissim vulputate nec cursus ante. Nunc sit...</p>
+                        <div className='p-2   flex flex-col gap-5'>
+                            <img className='w-[55vh] transition duration-300 ease-in-out  hover:scale-105' src={bag} alt="" />
+                            <div className='flex flex-col gap-5 text-gray-500'>
+                                <h1 className='text-xl w-95 text-black'>Black Friday Guide: Best Sales & Discount Codes</h1>
+                                <p>by fashe-theme Admin on Dec 28,2017</p>
+                                <p className='w-95'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam sed turpis sed lorem dignissim vulputate nec cursus ante. Nunc sit...</p>
+                            </div>
+                        </div>
+                        <div className='p-2  flex flex-col gap-5'>
+                            <img className='w-[55vh] transition duration-300 ease-in-out  hover:scale-105' src={blog2} alt="" />
+                            <div className='flex flex-col gap-5 text-gray-500'>
+                                <h1 className='text-xl w-95 text-black'>The White Sneakers Nearly Every Fashion Girls Own</h1>
+                                <p>by fashe-theme Admin on Dec 28,2017</p>
+                                <p className='w-95'>Duis ut velit gravida nibh bibendum commodo. Sus-pendisse pellentesque mattis augue id euismod. Inter-dum et...</p>
+                            </div>
+                        </div>
+                        <div className='p-2  flex flex-col gap-5'>
+                            <img className='w-[55vh] transition duration-300 ease-in-out  hover:scale-105' src={blog3} alt="" />
+                            <div className='flex flex-col gap-5 text-gray-500'>
+                                <h1 className='text-xl w-95 text-black'>New York SS 2018 Street Style: By Annina Mislin</h1>
+                                <p>by fashe-theme Admin on Dec 28,2017</p>
+                                <p className='w-95'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam sed turpis sed lorem dignissim vulputate nec cursus ante. Nunc sit...</p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+
+
+<div className='flex flex-col gap-20 p-5'>
+<h1 className='text-center text-[5vh] '>@ FOLLOW US ON INSTAGRAM</h1>
+<div className='flex  justify-center gap-30 text-center p-5 text-gray-600'>
+    <div className='w-95  border-r-1 flex flex-col gap-4'>
+        <h1>Free Delivery Worldwide</h1>
+        <p>Mirum est notare quam littera gothica</p>
     </div>
-</div>
-<div className='p-2'>
-    <img className='w-[55vh]' src={ blog2 } alt="" />
-    <div className='flex flex-col gap-5 text-gray-500'>
-        <h1 className='text-xl w-95 text-black'>The White Sneakers Nearly Every Fashion Girls Own</h1>
-        <p>by fashe-theme Admin on Dec 28,2017</p>
-        <p className='w-95'>Duis ut velit gravida nibh bibendum commodo. Sus-pendisse pellentesque mattis augue id euismod. Inter-dum et...</p>
+    <div className='flex flex-col gap-4'>
+        <h1>30 Days Return</h1>
+        <p className='text-[2vh] '>Simply return it within 30 days for an exchange.</p>
     </div>
-</div>
-<div className='p-2'>
-    <img className='w-[55vh]' src={ blog3} alt="" />
-    <div className='flex flex-col gap-5 text-gray-500'>
-        <h1 className='text-xl w-95 text-black'>New York SS 2018 Street Style: By Annina Mislin</h1>
-        <p>by fashe-theme Admin on Dec 28,2017</p>
-        <p className='w-95'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam sed turpis sed lorem dignissim vulputate nec cursus ante. Nunc sit...</p>
+    <div className=' w-95 border-l-1 flex flex-col gap-4'>
+        <h1>Store Opening</h1>
+        <p>Shop open from Monday to Sunday</p>
     </div>
+
+
 </div>
 
+
 </div>
-</div>
-
-
-
-
 
 
 
 
             </div>
- <Footer></Footer>
+            <Footer></Footer>
 
         </div>
 
