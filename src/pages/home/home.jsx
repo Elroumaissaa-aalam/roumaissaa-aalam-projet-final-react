@@ -45,7 +45,7 @@ const Home = () => {
 
 
 
-    
+
 
     const [timeLeft, setTimeLeft] = useState(calculateTimeLeft());
 
@@ -72,7 +72,7 @@ const Home = () => {
 
                         <div className="duration-300 ease-in-out absolute inset-0 transition-all h-full transform translate-x-0 group" data-carousel-item="active">
                             <img src={carossel} className="flex  h-full w-50  object-cover transition-transform duration-500 group-hover:scale-110 " alt="carousel image 1" />
-                            <div className="absolute inset-0 flex flex-col items-center justify-center text-black bg-opacity-30 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                            <div className="absolute inset-0 flex flex-col items-center justify-center text-black animate-pulse   group-hover:scale-105 duration-500">
                                 <h2 className="text-2xl md:text-4xl mb-2">Women Collection 2018</h2>
                                 <h1 className="text-4xl md:text-6xl font-bold mb-4">New arrivals</h1>
                                 <Link to="/Shop" className="px-6 py-3 bg-white text-black text-lg hover:bg-[#e65a46] hover:text-white transition-colors duration-300">Shop Now</Link>
@@ -316,6 +316,7 @@ const Home = () => {
 
                     <div className='flex'>
 
+                    <Link to={"/blog"}>
                         <div className='p-2   flex flex-col gap-5'>
                             <img className='w-[55vh] transition duration-300 ease-in-out  hover:scale-105' src={bag} alt="" />
                             <div className='flex flex-col gap-5 text-gray-500'>
@@ -324,6 +325,8 @@ const Home = () => {
                                 <p className='w-95'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam sed turpis sed lorem dignissim vulputate nec cursus ante. Nunc sit...</p>
                             </div>
                         </div>
+                        </Link>
+                   <Link to={"/blog"}>
                         <div className='p-2  flex flex-col gap-5'>
                             <img className='w-[55vh] transition duration-300 ease-in-out  hover:scale-105' src={blog2} alt="" />
                             <div className='flex flex-col gap-5 text-gray-500'>
@@ -332,6 +335,8 @@ const Home = () => {
                                 <p className='w-95'>Duis ut velit gravida nibh bibendum commodo. Sus-pendisse pellentesque mattis augue id euismod. Inter-dum et...</p>
                             </div>
                         </div>
+                   </Link>
+                      <Link to={"/blog"}>
                         <div className='p-2  flex flex-col gap-5'>
                             <img className='w-[55vh] transition duration-300 ease-in-out  hover:scale-105' src={blog3} alt="" />
                             <div className='flex flex-col gap-5 text-gray-500'>
@@ -339,7 +344,7 @@ const Home = () => {
                                 <p>by fashe-theme Admin on Dec 28,2017</p>
                                 <p className='w-95'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam sed turpis sed lorem dignissim vulputate nec cursus ante. Nunc sit...</p>
                             </div>
-                        </div>
+                        </div></Link>
 
                     </div>
                 </div>
