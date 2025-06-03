@@ -9,6 +9,9 @@ import sadsa from "../../assets/image/cards2.webp"
 import sab3a from "../../assets/image/cards6.webp"
 import tamna from "../../assets/image/shop-item-09.jpg"
 import tas3a from "../../assets/image/banner-08.jpg"
+import bag from "../../assets/image/blog-01.jpg"
+import blog2 from "../../assets/image/blog-02.jpg"
+import blog3 from "../../assets/image/blog-03.jpg"
 import { Carousel } from 'flowbite';
 import { Link } from 'react-router-dom';
 import Footer from '../../layouts/footer';
@@ -18,7 +21,7 @@ import Footer from '../../layouts/footer';
 
 const Home = () => {
     const calculateTimeLeft = () => {
-        const difference = +new Date('2025-12-31T23:59:59') - +new Date(); // Replace with your target date
+        const difference = +new Date('2025-12-31T23:59:59') - +new Date(); 
         let timeLeft = {};
 
         if (difference > 0) {
@@ -46,7 +49,7 @@ const Home = () => {
     }, [])
     return (
 
-        <div className='md:w-[79vw] h-[55vh] top-7 absolute left-[41.2vh] '>
+        <div className='md:w-[79vw] h-[55vh]  absolute left-[41.2vh] '>
             <div className=' flex flex-col gap-10'>
 
 
@@ -123,14 +126,14 @@ const Home = () => {
 
 
 
-                <div className='w-full h-[75vh] bg-cover bg-center' style={{ backgroundImage: `url(${tas3a})` }}>
+                <div className='w-full h-[80vh] bg-cover bg-center' style={{ backgroundImage: `url(${tas3a})` }}>
 
 
 
-                    <div className="flex justify-end items-center py-10">
+                    <div className="flex justify-end items-center py-10 p-4">
                         <div className="bg-white p-6  shadow-md flex flex-col items-center">
 
-                            <img src={ tamna} alt="Product Image" className="w-[30vw] h-[35vh] transition duration-300 ease-in-out hover:scale-105" />
+                            <img src={ tamna} alt="Product Image" className="w-[35vw] h-[40vh] transition duration-300 ease-in-out bg-cover hover:scale-105" />
 
 
                             <h3 className="text-xl font-semibold text-gray-700">Boxy2 T-Shirt with Roll Sleeve</h3>
@@ -168,8 +171,39 @@ const Home = () => {
 
 
 
+<div className='p-3'>
 
+<h1 className='text-center p-3 text-[5vh]'>Our Blog</h1>
 
+<div className='flex'>
+
+<div className='p-2'>
+    <img className='w-[55vh]' src={bag} alt="" />
+    <div className='flex flex-col gap-5 text-gray-500'>
+        <h1 className='text-xl w-95 text-black'>Black Friday Guide: Best Sales & Discount Codes</h1>
+        <p>by fashe-theme Admin on Dec 28,2017</p>
+        <p className='w-95'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam sed turpis sed lorem dignissim vulputate nec cursus ante. Nunc sit...</p>
+    </div>
+</div>
+<div className='p-2'>
+    <img className='w-[55vh]' src={ blog2 } alt="" />
+    <div className='flex flex-col gap-5 text-gray-500'>
+        <h1 className='text-xl w-95 text-black'>The White Sneakers Nearly Every Fashion Girls Own</h1>
+        <p>by fashe-theme Admin on Dec 28,2017</p>
+        <p className='w-95'>Duis ut velit gravida nibh bibendum commodo. Sus-pendisse pellentesque mattis augue id euismod. Inter-dum et...</p>
+    </div>
+</div>
+<div className='p-2'>
+    <img className='w-[55vh]' src={ blog3} alt="" />
+    <div className='flex flex-col gap-5 text-gray-500'>
+        <h1 className='text-xl w-95 text-black'>New York SS 2018 Street Style: By Annina Mislin</h1>
+        <p>by fashe-theme Admin on Dec 28,2017</p>
+        <p className='w-95'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam sed turpis sed lorem dignissim vulputate nec cursus ante. Nunc sit...</p>
+    </div>
+</div>
+
+</div>
+</div>
 
 
 

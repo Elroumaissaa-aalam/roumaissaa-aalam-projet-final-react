@@ -20,12 +20,12 @@ const Navbar = () => {
 
                     <nav className='flex flex-col gap-5 text-center'>
                         <Link to={"/"} className='hover:text-orange-400' >Home</Link>
-                        <Link to={"/shop"} className='hover:text-orange-400' href="">Shop</Link>
+                        <Link to={"/Shop"} className='hover:text-orange-400' href="">Shop</Link>
                         <Link to={""} className='hover:text-orange-400' href="">Sale</Link>
                         <Link to={""} className='hover:text-orange-400' href="">Features</Link>
-                        <Link to={""} className='hover:text-orange-400' href="">Blog</Link>
-                        <Link to={"/about"} className='hover:text-orange-400' href="">About</Link>
-                        <Link to={"/contact"} className='hover:text-orange-400' href="">Contact</Link>
+                        <Link to={"/Blog"} className='hover:text-orange-400' href="">Blog</Link>
+                        <Link to={"/About"} className='hover:text-orange-400' href="">About</Link>
+                        <Link to={"/Contact"} className='hover:text-orange-400' href="">Contact</Link>
                     </nav>
 
 
