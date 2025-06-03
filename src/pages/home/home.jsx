@@ -43,7 +43,24 @@ const Home = () => {
         return timeLeft;
     };
 
+const products = [
+  { id: 1, name: "Boxy T-Shirt with Roll Sleeve", image: shopy1, price: 20.0, details: "S / Gray" },
+  { id: 2, name: "Boxy T-Shirt with Roll Sleeve", image: shopy2, price: 20.0, details: "S / Gray" },
+  { id: 3, name: "Boxy T-Shirt with Roll Sleeve", image: shopy3, price: 20.0, details: "S / Gray" },
+  { id: 4, name: "Boxy T-Shirt with Roll Sleeve", image: shopy4, price: 20.0, details: "S / Gray" },
+  { id: 5, name: "Boxy T-Shirt with Roll Sleeve", image: shopy1, price: 20.0, details: "S / Gray" },
+  { id: 6, name: "Boxy T-Shirt with Roll Sleeve", image: shopy2, price: 20.0, details: "S / Gray" },
+  { id: 7, name: "Boxy T-Shirt with Roll Sleeve", image: shopy3, price: 20.0, details: "S / Gray" },
+  { id: 8, name: "Boxy T-Shirt with Roll Sleeve", image: shopy4, price: 20.0, details: "S / Gray" },
+];
+  const [showModal, setShowModal] = useState(false);
+  const [selectedProduct, setSelectedProduct] = useState(null);
 
+  const handleAddToCart = (product) => {
+    setSelectedProduct(product);
+    setShowModal(true);
+    console.log("Added product:", product);
+  };
 
 
 
@@ -184,130 +201,48 @@ const Home = () => {
 
                 </div>
 
-                <div className='flex flex-col items-center gap-5'>
-                    <h1>OUR PRODUCTS</h1>
-                    <div className='flex gap-9'>
+                 <div className="flex flex-col items-center gap-5">
+      <h1 className="text-2xl font-bold">OUR PRODUCTS</h1>
 
-                        <button>Best Seller</button>
-                        <button>Featured</button>
-                        <button>Home page</button>
-                    </div>
+      <div className="flex gap-9">
+        <button className="text-gray-600 hover:text-black">Best Seller</button>
+        <button className="text-gray-600 hover:text-black">Featured</button>
+        <button className="text-gray-600 hover:text-black">Home Page</button>
+      </div>
 
+      <div id="ourproducts" className="grid grid-cols-4 gap-5 p-5">
+        {products.map((product) => (
+          <div key={product.id} className="w-[18vw] p-3">
+            <div className="relative group">
+              <img
+                src={product.image}
+                alt={product.name}
+                className="w-full transition duration-300 ease-in-out group-hover:scale-105"
+              />
+              <button
+                className="absolute bottom-2 right-2 bg-black text-white text-sm px-3 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                onClick={() => handleAddToCart(product)}
+              >
+                Add to Cart
+              </button>
+            </div>
+            <h1 className="mt-2 text-gray-800">
+              {product.name}
+              <br />
+              <span className="text-gray-600">${product.price.toFixed(2)}</span>
+            </h1>
+          </div>
+        ))}
+      </div>
 
-
-                    <div className='grid grid-cols-4 gap-5 p-5'>
-                        <div className="w-[18vw] p-3">
-                            <div className="relative group">
-                                <img src={shopy1} alt="" className="w-full transition duration-300 ease-in-out group-hover:scale-105" />
-                                <button className="absolute bottom-2 right-25 bg-black text-white text-sm px-3 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                                    Add to Cart
-                                </button>
-                            </div>
-                            <h1 className="">
-                                Boxy T-Shirt with Roll Sleeve <br />
-                                <span>$20.00</span>
-                            </h1>
-
-                        </div>
-                        <div className="w-[18vw] p-3">
-                            <div className="relative group">
-                                <img src={shopy2} alt="" className="w-full transition duration-300 ease-in-out group-hover:scale-105" />
-                                <button className="absolute bottom-2 right-25 bg-black text-white text-sm px-3 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                                    Add to Cart
-                                </button>
-                            </div>
-                            <h1 className="">
-                                Boxy T-Shirt with Roll Sleeve <br />
-                                <span>$20.00</span>
-                            </h1>
-
-                        </div>
-                        <div className="w-[18vw] p-3">
-                            <div className="relative group">
-                                <img src={shopy3} alt="" className="w-full transition duration-300 ease-in-out group-hover:scale-105" />
-                                <button className="absolute bottom-2 right-25 bg-black text-white text-sm px-3 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                                    Add to Cart
-                                </button>
-                            </div>
-                            <h1 className="">
-                                Boxy T-Shirt with Roll Sleeve <br />
-                                <span>$20.00</span>
-                            </h1>
-
-                        </div>
-                        <div className="w-[18vw] p-3">
-                            <div className="relative group">
-                                <img src={shopy4} alt="" className="w-full transition duration-300 ease-in-out group-hover:scale-105" />
-                                <button className="absolute bottom-2 right-25 bg-black text-white text-sm px-3 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                                    Add to Cart
-                                </button>
-                            </div>
-                            <h1 className="">
-                                Boxy T-Shirt with Roll Sleeve <br />
-                                <span>$20.00</span>
-                            </h1>
-
-                        </div>
-                        <div className="w-[18vw] p-3">
-                            <div className="relative group">
-                                <img src={shopy5} alt="" className="w-full transition duration-300 ease-in-out group-hover:scale-105" />
-                                <button className="absolute bottom-2 right-25 bg-black text-white text-sm px-3 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                                    Add to Cart
-                                </button>
-                            </div>
-                            <h1 className="">
-                                Boxy T-Shirt with Roll Sleeve <br />
-                                <span>$20.00</span>
-                            </h1>
-
-                        </div>
-                        <div className="w-[18vw] p-3">
-                            <div className="relative group">
-                                <img src={shopy6} alt="" className="w-full transition duration-300 ease-in-out group-hover:scale-105" />
-                                <button className="absolute bottom-2 right-25 bg-black text-white text-sm px-3 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                                    Add to Cart
-                                </button>
-                            </div>
-                            <h1 className="">
-                                Boxy T-Shirt with Roll Sleeve <br />
-                                <span>$20.00</span>
-                            </h1>
-
-                        </div>
-                        <div className="w-[18vw] p-3">
-                            <div className="relative group">
-                                <img src={shopy7} alt="" className="w-full transition duration-300 ease-in-out group-hover:scale-105" />
-                                <button className="absolute bottom-2 right-25 bg-black text-white text-sm px-3 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                                    Add to Cart
-                                </button>
-                            </div>
-                            <h1 className="">
-                                Boxy T-Shirt with Roll Sleeve <br />
-                                <span>$20.00</span>
-                            </h1>
-
-                        </div>
-                        <div className="w-[18vw] p-3">
-                            <div className="relative group">
-                                <img src={shopy3} alt="" className="w-full transition duration-300 ease-in-out group-hover:scale-105" />
-                                <button className="absolute bottom-2 right-25 bg-black text-white text-sm px-3 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                                    Add to Cart
-                                </button>
-                            </div>
-                            <h1 className="">
-                                Boxy T-Shirt with Roll Sleeve <br />
-                                <span>$20.00</span>
-                            </h1>
-
-                        </div>
-                    </div>
-                    <div>
-
-
-
-
-                    </div>
-                </div>
+      {/* Modal */}
+      {showModal && (
+        <CartModal
+          product={selectedProduct}
+          onClose={() => setShowModal(false)}
+        />
+      )}
+    </div>
 
 
                 <div className='p-3'>
@@ -316,35 +251,35 @@ const Home = () => {
 
                     <div className='flex'>
 
-                    <Link to={"/blog"}>
-                        <div className='p-2   flex flex-col gap-5'>
-                            <img className='w-[55vh] transition duration-300 ease-in-out  hover:scale-105' src={bag} alt="" />
-                            <div className='flex flex-col gap-5 text-gray-500'>
-                                <h1 className='text-xl w-95 text-black'>Black Friday Guide: Best Sales & Discount Codes</h1>
-                                <p>by fashe-theme Admin on Dec 28,2017</p>
-                                <p className='w-95'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam sed turpis sed lorem dignissim vulputate nec cursus ante. Nunc sit...</p>
+                        <Link to={"/blog"}>
+                            <div className='p-2   flex flex-col gap-5'>
+                                <img className='w-[55vh] transition duration-300 ease-in-out  hover:scale-105' src={bag} alt="" />
+                                <div className='flex flex-col gap-5 text-gray-500'>
+                                    <h1 className='text-xl w-95 text-black'>Black Friday Guide: Best Sales & Discount Codes</h1>
+                                    <p>by fashe-theme Admin on Dec 28,2017</p>
+                                    <p className='w-95'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam sed turpis sed lorem dignissim vulputate nec cursus ante. Nunc sit...</p>
+                                </div>
                             </div>
-                        </div>
                         </Link>
-                   <Link to={"/blog"}>
-                        <div className='p-2  flex flex-col gap-5'>
-                            <img className='w-[55vh] transition duration-300 ease-in-out  hover:scale-105' src={blog2} alt="" />
-                            <div className='flex flex-col gap-5 text-gray-500'>
-                                <h1 className='text-xl w-95 text-black'>The White Sneakers Nearly Every Fashion Girls Own</h1>
-                                <p>by fashe-theme Admin on Dec 28,2017</p>
-                                <p className='w-95'>Duis ut velit gravida nibh bibendum commodo. Sus-pendisse pellentesque mattis augue id euismod. Inter-dum et...</p>
+                        <Link to={"/blog"}>
+                            <div className='p-2  flex flex-col gap-5'>
+                                <img className='w-[55vh] transition duration-300 ease-in-out  hover:scale-105' src={blog2} alt="" />
+                                <div className='flex flex-col gap-5 text-gray-500'>
+                                    <h1 className='text-xl w-95 text-black'>The White Sneakers Nearly Every Fashion Girls Own</h1>
+                                    <p>by fashe-theme Admin on Dec 28,2017</p>
+                                    <p className='w-95'>Duis ut velit gravida nibh bibendum commodo. Sus-pendisse pellentesque mattis augue id euismod. Inter-dum et...</p>
+                                </div>
                             </div>
-                        </div>
-                   </Link>
-                      <Link to={"/blog"}>
-                        <div className='p-2  flex flex-col gap-5'>
-                            <img className='w-[55vh] transition duration-300 ease-in-out  hover:scale-105' src={blog3} alt="" />
-                            <div className='flex flex-col gap-5 text-gray-500'>
-                                <h1 className='text-xl w-95 text-black'>New York SS 2018 Street Style: By Annina Mislin</h1>
-                                <p>by fashe-theme Admin on Dec 28,2017</p>
-                                <p className='w-95'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam sed turpis sed lorem dignissim vulputate nec cursus ante. Nunc sit...</p>
-                            </div>
-                        </div></Link>
+                        </Link>
+                        <Link to={"/blog"}>
+                            <div className='p-2  flex flex-col gap-5'>
+                                <img className='w-[55vh] transition duration-300 ease-in-out  hover:scale-105' src={blog3} alt="" />
+                                <div className='flex flex-col gap-5 text-gray-500'>
+                                    <h1 className='text-xl w-95 text-black'>New York SS 2018 Street Style: By Annina Mislin</h1>
+                                    <p>by fashe-theme Admin on Dec 28,2017</p>
+                                    <p className='w-95'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam sed turpis sed lorem dignissim vulputate nec cursus ante. Nunc sit...</p>
+                                </div>
+                            </div></Link>
 
                     </div>
                 </div>

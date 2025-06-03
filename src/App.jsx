@@ -7,6 +7,8 @@ import Shop from './pages/shop/shop';
 import About from './pages/about/about';
 import Contact from './pages/contact/contact';
 import Blog from './pages/blog/blog';
+import Singup from './pages/sing up/singup';
+import Achat from './pages/achat/achat';
 
 const App = () => {
   return (
@@ -21,6 +23,8 @@ const App = () => {
       <Route path="/about" element={<About />} />
       <Route path="/contact" element={<Contact />} />
       <Route path="/blog" element={<Blog />} />
+      <Route path="/singup" element={<Singup />} />
+      <Route path="/achat" element={<Achat />} />
    
      </Routes>
   </div>
