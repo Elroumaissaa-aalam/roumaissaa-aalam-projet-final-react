@@ -91,6 +91,10 @@ const Achat = () => {
 };
 
 export default Achat;
+
+
+
+
 // import React from 'react';
 
 // const Achat = ({ product, onClose }) => {
