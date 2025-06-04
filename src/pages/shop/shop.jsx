@@ -72,7 +72,7 @@ const ShopPage = () => {
                          (selectedPriceFilter === 'over25' && product.price >= 25);
 
       const sizeMatch = selectedSizeFilter === 'all' ||
-                        (product.details && product.details.includes(` ${dummyProducts.details} `)); 
+                        (product.details && product.details.includes(` ${selectedSizeFilter} `)); 
 
       return priceMatch && sizeMatch;
     });
@@ -134,7 +134,7 @@ const ShopPage = () => {
           >
             L
           </button>
-          
+         
         </div>
 
        

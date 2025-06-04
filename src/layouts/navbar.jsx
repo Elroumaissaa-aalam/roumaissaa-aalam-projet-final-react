@@ -15,10 +15,10 @@ const Navbar = () => {
           <img src={logo} alt="Logo" />
 
           <div className='flex gap-6 items-center'>
-            <Link to="/singup" className='flex w-[7vh] border-r border-black/30 hover:text-orange-400 text-gray-600/60'>
+            <Link to={"/singup"} className='flex w-[7vh] border-r border-black/30 hover:text-orange-400 text-gray-600/60'>
               <BsPersonCircle size={"3.7vh"} />
             </Link>
-            <Link to="/achat" className='hover:text-orange-400 text-gray-600/60'>
+            <Link to={"/achat" } className='hover:text-orange-400 text-gray-600/60'>
               <IoBagOutline size={"3.7vh"} />
             </Link>
           </div>
@@ -43,7 +43,7 @@ const Navbar = () => {
         </div>
       </header>
 
-      {/* ===== Burger Menu Button ===== */}
+   
       <div className="md:hidden fixed top-4 left-4 z-50">
         <button
           onClick={() => setShowMobileNav(true)}
@@ -53,7 +53,7 @@ const Navbar = () => {
         </button>
       </div>
 
-      {/* ===== Mobile Nav Overlay ===== */}
+     
       {showMobileNav && (
         <div className="md:hidden fixed inset-0 bg-white z-50 flex flex-col items-center gap-6 pt-10 px-6">
           <button

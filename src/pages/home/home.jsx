@@ -44,14 +44,14 @@ const Home = () => {
     };
 
 const products = [
-  { id: 1, name: "Boxy T-Shirt with Roll Sleeve", image: shopy1, price: 20.0, details: "S / Gray" },
-  { id: 2, name: "Boxy T-Shirt with Roll Sleeve", image: shopy2, price: 20.0, details: "S / Gray" },
-  { id: 3, name: "Boxy T-Shirt with Roll Sleeve", image: shopy3, price: 20.0, details: "S / Gray" },
-  { id: 4, name: "Boxy T-Shirt with Roll Sleeve", image: shopy4, price: 20.0, details: "S / Gray" },
-  { id: 5, name: "Boxy T-Shirt with Roll Sleeve", image: shopy1, price: 20.0, details: "S / Gray" },
-  { id: 6, name: "Boxy T-Shirt with Roll Sleeve", image: shopy2, price: 20.0, details: "S / Gray" },
-  { id: 7, name: "Boxy T-Shirt with Roll Sleeve", image: shopy3, price: 20.0, details: "S / Gray" },
-  { id: 8, name: "Boxy T-Shirt with Roll Sleeve", image: shopy4, price: 20.0, details: "S / Gray" },
+  { id: 1, name: "Boxy T-Shirt with Roll Sleeve", image: shopy1, price: 20.0, details: "S" },
+  { id: 2, name: "Boxy T-Shirt with Roll Sleeve", image: shopy2, price: 20.0, details: "S" },
+  { id: 3, name: "Boxy T-Shirt with Roll Sleeve", image: shopy3, price: 20.0, details: "S" },
+  { id: 4, name: "Boxy T-Shirt with Roll Sleeve", image: shopy4, price: 20.0, details: "S" },
+  { id: 5, name: "Boxy T-Shirt with Roll Sleeve", image: shopy1, price: 20.0, details: "S" },
+  { id: 6, name: "Boxy T-Shirt with Roll Sleeve", image: shopy2, price: 20.0, details: "S" },
+  { id: 7, name: "Boxy T-Shirt with Roll Sleeve", image: shopy3, price: 20.0, details: "S" },
+  { id: 8, name: "Boxy T-Shirt with Roll Sleeve", image: shopy4, price: 20.0, details: "S" },
 ];
   const [showModal, setShowModal] = useState(false);
   const [selectedProduct, setSelectedProduct] = useState(null);
@@ -235,7 +235,7 @@ const products = [
         ))}
       </div>
 
-      {/* Modal */}
+     
       {showModal && (
         <CartModal
           product={selectedProduct}
